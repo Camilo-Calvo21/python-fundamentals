@@ -1,4 +1,4 @@
-saludo = "Hola bienvenido a jugar"
+print("Hola bienvenido a jugar")
 numero1 = int(input("Escribe tu primer numero: "))
 numero2 = int(input("Escribe tu segundo numero: "))
 operacion = input("Elige una de las siguientes operaciones (+, -, *, /): ")
@@ -14,4 +14,3 @@ elif operacion == "/" :
     print(numero1 / numero2)    
 else: 
     print("No selecionaste bien la operacion")    
-
