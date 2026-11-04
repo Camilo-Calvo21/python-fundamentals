@@ -8,6 +8,13 @@ def add_task(tasks, title):
     tasks.append(new_task)
     print(f"La tarea '{title}' se agregó correctamente")
 
+def list_tasks(tasks):
+    if len(tasks) == 0:
+        print("No hay tareas todavía.")
+        return
+    for current_task in tasks:
+        print(current_task["title"])
+
 while True:
     print("=== Gestor de tareas ===")
     print("1. Añadir tarea")
@@ -19,7 +26,7 @@ while True:
         title_add = input("Nombre de la tarea: ")
         add_task(tasks, title_add)
     elif task_option == "2":
-        print("Lista de tareas: ")
+        list_tasks(tasks)
     elif task_option == "3":
         print("Hasta luego")
         break
