@@ -21,8 +21,16 @@ def list_tasks(tasks):
         print(f"{current_task['title']} - {status_text}")
 
 def complete_task(tasks, task_number):
-    num_index = int(task_number) - 1
+    try:
+        num_index = int(task_number) - 1
+    except ValueError:
+        print("Error: Debes ingresar un número válido.")
+        return
+    if num_index < 0 or num_index >= len(tasks):
+        print("Error: Esta tarea no existe.")
+        return
     tasks[num_index]["completed"] = True
+    print("Tarea completada con éxito!")
 
 while True:
     print("=== Gestor de tareas ===")
@@ -30,7 +38,7 @@ while True:
     print("2. Listar tareas")
     print("3. Completar tarea")
     print("4. Salir")
-    task_option = input('Elige una opcion: ')
+    task_option = input('Elige una opción: ')
 
     if task_option == "1":
         title_add = input("Nombre de la tarea: ")
@@ -40,7 +48,7 @@ while True:
         list_tasks(tasks)
 
     elif task_option == "3":
-        task_to_complete = input("Que numero quieres completar? ")
+        task_to_complete = input("Qué número quieres completar? ")
         complete_task(tasks, task_to_complete)
 
     elif task_option == "4":
