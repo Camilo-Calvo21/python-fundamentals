@@ -1,6 +1,10 @@
 tasks = []
 
 def add_task(tasks, title):
+    title = title.strip()
+    if title == "":
+        print("Error: No se ingresó tarea")
+        return
     new_task = {
         "title": title,
         "completed": False
